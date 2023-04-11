@@ -13,6 +13,9 @@ let clearAllBtn = document.querySelector(".clear");
 let backSpaceBtn = document.querySelector(".backspace");
 let decimalBtn = document.querySelector(".decimal");
 let calculateBtn = document.querySelector(".calculate");
+let memDisplay = document.querySelector(".mem-value");
+let memoryBtns = document.querySelectorAll(".mem");
+let feBtn = document.querySelector(".f-e");
 // some constants
 const OPERATORS = ["*", "-", "/", "+", "%"];
 const POWER = "POWER(";
@@ -94,4 +97,4 @@ function emptyInput() {
     dataFormula = [];
     dataValue = [];
 }
-export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, calculateBtn, search, emptyInput, OPENPARANTHESE, CLOSEPARANTHESE, OPERATORS, };
+export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, calculateBtn, search, emptyInput, OPENPARANTHESE, CLOSEPARANTHESE, OPERATORS, memDisplay, memoryBtns, feBtn };

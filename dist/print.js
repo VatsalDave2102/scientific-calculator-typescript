@@ -153,4 +153,4 @@ function handleNegate() {
         output.value = dataValue.join("");
     }
 }
-export { print };
+export { print, updateInput };

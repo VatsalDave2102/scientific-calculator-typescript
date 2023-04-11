@@ -151,4 +151,4 @@ function handleNegate() {
   }
 }
 
-export { print };
+export { print, updateInput };

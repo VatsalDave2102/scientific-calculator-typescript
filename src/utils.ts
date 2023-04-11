@@ -18,6 +18,9 @@ let clearAllBtn: HTMLButtonElement = document.querySelector(".clear")!;
 let backSpaceBtn: HTMLButtonElement = document.querySelector(".backspace")!;
 let decimalBtn: HTMLButtonElement = document.querySelector(".decimal")!;
 let calculateBtn: HTMLButtonElement = document.querySelector(".calculate")!;
+let memDisplay:HTMLSpanElement = document.querySelector(".mem-value")!;
+let memoryBtns:NodeListOf<HTMLButtonElement> = document.querySelectorAll(".mem");
+let feBtn:HTMLButtonElement = document.querySelector(".f-e")!;
 // some constants
 const OPERATORS = ["*", "-", "/", "+", "%"];
 const POWER = "POWER(";
@@ -137,5 +140,7 @@ export {
   OPENPARANTHESE,
   CLOSEPARANTHESE,
   OPERATORS,
-   
+  memDisplay,
+  memoryBtns,
+  feBtn
 };

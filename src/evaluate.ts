@@ -50,51 +50,50 @@ function trigo(callback: (angle: string) => {}, angle: string) {
 // function for calculation
 function calculate() {
   calculateBtn.addEventListener("click", () => {
-    if(dataFormula.length != 0){
-        let formulaStr = dataFormula.join("");
+    if (dataFormula.length != 0) {
+      let formulaStr = dataFormula.join("");
 
-        // loop to put multiply before functions and constants
-        buttons.forEach((button) => {
-          let position = putMultiply(dataFormula, button);
-          position.forEach((index) => {
-            dataFormula[index] = "*" + button;
-          });
+      // loop to put multiply before functions and constants
+      buttons.forEach((button) => {
+        let position = putMultiply(dataFormula, button);
+        position.forEach((index) => {
+          dataFormula[index] = "*" + button;
         });
-    
-        // loop to put multiply digit that are after constants and functions
-        numValue.forEach((num) => {
-          let position = putMultiplyNum(dataFormula, num);
-          position.forEach((index) => {
-            dataFormula[index] = "*" + num;
-          });
+      });
+
+      // loop to put multiply digit that are after constants and functions
+      numValue.forEach((num) => {
+        let position = putMultiplyNum(dataFormula, num);
+        position.forEach((index) => {
+          dataFormula[index] = "*" + num;
         });
-        formulaStr = dataFormula.join("");
-        formulaStr = correctPowerPosition(formulaStr);
-        formulaStr = correctFactPosition(formulaStr);
-    
-        let result: number;
-        // usring try and catch for evaluation
-        try {
-          result = eval(formulaStr);
-          if (result % 1 != 0) {
-            result = Number(result.toFixed(4));
-          }
-          if (result >= Number.MAX_SAFE_INTEGER) {
-            result = Infinity;
-          }
-          if (result <= Number.MIN_SAFE_INTEGER) {
-            result = -Infinity;
-          }
-          emptyInput();
-          dataFormula.push(String(result));
-          dataValue.push(String(result));
-          output.value = dataValue.join("");
-        } catch (error) {
-          output.value = "Syntax Error!";
-          emptyInput();
+      });
+      formulaStr = dataFormula.join("");
+      formulaStr = correctPowerPosition(formulaStr);
+      formulaStr = correctFactPosition(formulaStr);
+
+      let result: number;
+      // usring try and catch for evaluation
+      try {
+        result = eval(formulaStr);
+        if (result % 1 != 0) {
+          result = Number(result.toFixed(4));
         }
-    } 
-   
+        if (result >= Number.MAX_SAFE_INTEGER) {
+          result = Infinity;
+        }
+        if (result <= Number.MIN_SAFE_INTEGER) {
+          result = -Infinity;
+        }
+        emptyInput();
+        dataFormula.push(String(result));
+        dataValue.push(String(result));
+        output.value = dataValue.join("");
+      } catch (error) {
+        output.value = "Syntax Error!";
+        emptyInput();
+      }
+    }
   });
 }
 

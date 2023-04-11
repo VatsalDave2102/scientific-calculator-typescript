@@ -11,6 +11,7 @@ import {
 } from "./utils.js";
 import { print } from "./print.js";
 import { calculate } from "./evaluate.js";
+import { fE, mcEval, mMinusEval, mPlusEval, mrEval, msEval } from "./memory.js";
 // advanced function toggler
 advFuncToggler.addEventListener("click", () => {
   let hiddenFunc: NodeListOf<HTMLButtonElement> =
@@ -37,9 +38,15 @@ function degToggler() {
 }
 print(mathFuncs);
 print(trigoFuncs);
-print(operators)
-print(keys)
-print(numbers)
-clearAll()
-backSpace()
-calculate()
+print(operators);
+print(keys);
+print(numbers);
+clearAll();
+backSpace();
+calculate();
+msEval();
+mrEval();
+mPlusEval();
+mMinusEval();
+mcEval();
+fE();

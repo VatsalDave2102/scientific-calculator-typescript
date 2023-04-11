@@ -1,6 +1,7 @@
 import { advFuncToggler, backSpace, clearAll, isDegree, keys, mathFuncs, numbers, operators, trigoFuncs, } from "./utils.js";
 import { print } from "./print.js";
 import { calculate } from "./evaluate.js";
+import { fE, mcEval, mMinusEval, mPlusEval, mrEval, msEval } from "./memory.js";
 // advanced function toggler
 advFuncToggler.addEventListener("click", () => {
     let hiddenFunc = document.querySelectorAll(".visually-hidden");
@@ -31,3 +32,9 @@ print(numbers);
 clearAll();
 backSpace();
 calculate();
+msEval();
+mrEval();
+mPlusEval();
+mMinusEval();
+mcEval();
+fE();
