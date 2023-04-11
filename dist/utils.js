@@ -7,29 +7,30 @@ let keys = document.querySelectorAll(".key");
 let output = document.querySelector(".output");
 let dataValue = [];
 let dataFormula = [];
-let advFuncToggler = document.querySelector('.adv-func-toggler');
+let advFuncToggler = document.querySelector(".adv-func-toggler");
 let isDegree = document.querySelector(".deg");
 let clearAllBtn = document.querySelector(".clear");
 let backSpaceBtn = document.querySelector(".backspace");
 let decimalBtn = document.querySelector(".decimal");
+let calculateBtn = document.querySelector(".calculate");
 // some constants
-let OPERATORS = ["*", "-", "/", "+", "%"];
-let POWER = "POWER(";
-let FACTORIAL = "FACTORIAL";
-let PI = "Math.PI";
-let E = "Math.E";
-let MATHLOG10 = "Math.log10(";
-let MATHLOG = "Math.log(";
-let MATHSQRT = "Math.sqrt(";
-let MATHCBRT = "Math.cbrt(";
-let OPENPARANTHESE = "(";
+const OPERATORS = ["*", "-", "/", "+", "%"];
+const POWER = "POWER(";
+const FACTORIAL = "FACTORIAL";
+const PI = "Math.PI";
+const E = "Math.E";
+const MATHLOG10 = "Math.log10(";
+const MATHLOG = "Math.log(";
+const MATHSQRT = "Math.sqrt(";
+const MATHCBRT = "Math.cbrt(";
+const OPENPARANTHESE = "(";
+const CLOSEPARANTHESE = ")";
 // utility functions
 // clear function
 function clearAll() {
     clearAllBtn.addEventListener("click", () => {
-        dataValue = [];
         output.value = "";
-        dataFormula = [];
+        emptyInput();
         disableDecimal();
     });
 }
@@ -77,4 +78,20 @@ function getValue() {
     }
     return value;
 }
-export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, };
+// search function to get indexes for given keyword
+function search(array, keyword) {
+    let resultArray = [];
+    // this searches  keyword in array and puts it's index in result_array
+    array.forEach((element, index) => {
+        if (element == keyword) {
+            resultArray.push(index);
+        }
+    });
+    //console.log(result_array)
+    return resultArray;
+}
+function emptyInput() {
+    dataFormula = [];
+    dataValue = [];
+}
+export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, calculateBtn, search, emptyInput, OPENPARANTHESE, CLOSEPARANTHESE, OPERATORS, };

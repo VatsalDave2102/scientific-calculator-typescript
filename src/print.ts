@@ -1,4 +1,11 @@
-import { output, dataFormula, dataValue, disableDecimal, FACTORIAL, POWER, } from "./utils.js";
+import {
+  output,
+  dataFormula,
+  dataValue,
+  disableDecimal,
+  FACTORIAL,
+  POWER,
+} from "./utils.js";
 
 // update input function
 function updateInput(value: string, formula: string): void {
@@ -19,15 +26,18 @@ function print(dataType: NodeListOf<HTMLButtonElement>) {
           handleTrigoFunc(formula, event);
         } else if (dataType[i]?.classList[2] == "operator") {
           handleOperator(formula, event);
-        } else if (dataType[i]?.classList[2] == "keys") {
+        } else if (dataType[i]?.classList[2] == "key") {
           if (formula == "negate") {
             handleNegate();
+          } else {
+            updateInput((event.target as HTMLButtonElement).value, formula);
+            output.value = dataValue.join("");
           }
         } else {
           updateInput((event.target as HTMLButtonElement).value, formula);
-          output.value = dataValue.join('')
+          output.value = dataValue.join("");
         }
-         disableDecimal()
+        disableDecimal();
       } else {
         alert("Input limit reached");
       }
@@ -38,7 +48,7 @@ function print(dataType: NodeListOf<HTMLButtonElement>) {
 // handles all math functions
 function handleMathFunc(formula: string, e: MouseEvent) {
   let symbol: string;
-  if (formula ==  FACTORIAL) {
+  if (formula == FACTORIAL) {
     symbol = "!";
     updateInput(symbol, formula);
     output.value = dataValue.join("");
@@ -48,37 +58,37 @@ function handleMathFunc(formula: string, e: MouseEvent) {
     output.value = dataValue.join("");
   } else if (formula == "square") {
     symbol = "^(";
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     updateInput("2)", "2)");
     output.value = dataValue.join("");
   } else if (formula == "cube") {
     symbol = "^(";
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     updateInput("3)", "3)");
     output.value = dataValue.join("");
   } else if (formula == "tenx") {
     symbol = "^(";
     updateInput("10", "10");
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     output.value = dataValue.join("");
   } else if (formula == "twox") {
     symbol = "^(";
     updateInput("2", "2");
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     output.value = dataValue.join("");
   } else if (formula == "onebyx") {
     symbol = "^(";
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     updateInput("-1)", "-1)");
     output.value = dataValue.join("");
   } else if (formula == "ex") {
     symbol = "^(";
     updateInput("e", "Math.E");
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     output.value = dataValue.join("");
   } else if (formula == "nroot") {
     symbol = "^(";
-    updateInput(symbol, "POWER(");
+    updateInput(symbol, POWER);
     updateInput("1", "1");
     updateInput("/", "/");
     output.value = dataValue.join("");
@@ -141,5 +151,4 @@ function handleNegate() {
   }
 }
 
-
-export { print }
+export { print };

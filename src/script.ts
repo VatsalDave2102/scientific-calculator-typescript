@@ -10,6 +10,7 @@ import {
   trigoFuncs,
 } from "./utils.js";
 import { print } from "./print.js";
+import { calculate } from "./evaluate.js";
 // advanced function toggler
 advFuncToggler.addEventListener("click", () => {
   let hiddenFunc: NodeListOf<HTMLButtonElement> =
@@ -41,3 +42,4 @@ print(keys)
 print(numbers)
 clearAll()
 backSpace()
+calculate()

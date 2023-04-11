@@ -1,5 +1,6 @@
 import { advFuncToggler, backSpace, clearAll, isDegree, keys, mathFuncs, numbers, operators, trigoFuncs, } from "./utils.js";
 import { print } from "./print.js";
+import { calculate } from "./evaluate.js";
 // advanced function toggler
 advFuncToggler.addEventListener("click", () => {
     let hiddenFunc = document.querySelectorAll(".visually-hidden");
@@ -29,3 +30,4 @@ print(keys);
 print(numbers);
 clearAll();
 backSpace();
+calculate();
