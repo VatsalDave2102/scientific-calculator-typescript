@@ -1,21 +1,21 @@
 // targeting buttons
-let numbers = document.querySelectorAll(".number");
-let operators = document.querySelectorAll(".operator");
+let output = document.querySelector(".output");
+let memDisplay = document.querySelector(".mem-value");
+let isDegree = document.querySelector(".deg");
+let feBtn = document.querySelector(".f-e");
+let memoryBtns = document.querySelectorAll(".mem");
 let trigoFuncs = document.querySelectorAll(".trigo-function");
 let mathFuncs = document.querySelectorAll(".math-function");
-let keys = document.querySelectorAll(".key");
-let output = document.querySelector(".output");
-let dataValue = [];
-let dataFormula = [];
 let advFuncToggler = document.querySelector(".adv-func-toggler");
-let isDegree = document.querySelector(".deg");
+let operators = document.querySelectorAll(".operator");
+let numbers = document.querySelectorAll(".number");
+let keys = document.querySelectorAll(".key");
 let clearAllBtn = document.querySelector(".clear");
 let backSpaceBtn = document.querySelector(".backspace");
+let dataValue = [];
+let dataFormula = [];
 let decimalBtn = document.querySelector(".decimal");
 let calculateBtn = document.querySelector(".calculate");
-let memDisplay = document.querySelector(".mem-value");
-let memoryBtns = document.querySelectorAll(".mem");
-let feBtn = document.querySelector(".f-e");
 // some constants
 const OPERATORS = ["*", "-", "/", "+", "%"];
 const POWER = "POWER(";
@@ -93,8 +93,9 @@ function search(array, keyword) {
     //console.log(result_array)
     return resultArray;
 }
+// clears the input from input strings
 function emptyInput() {
     dataFormula = [];
     dataValue = [];
 }
-export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, calculateBtn, search, emptyInput, OPENPARANTHESE, CLOSEPARANTHESE, OPERATORS, memDisplay, memoryBtns, feBtn };
+export { numbers, operators, trigoFuncs, mathFuncs, keys, output, dataFormula, dataValue, advFuncToggler, isDegree, clearAllBtn, backSpaceBtn, clearAll, backSpace, POWER, disableDecimal, FACTORIAL, PI, E, MATHCBRT, MATHLOG, MATHLOG10, MATHSQRT, calculateBtn, search, emptyInput, OPENPARANTHESE, CLOSEPARANTHESE, OPERATORS, memDisplay, memoryBtns, feBtn, };
