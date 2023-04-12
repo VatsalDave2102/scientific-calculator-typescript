@@ -151,9 +151,14 @@ function getPowerBase(formulas: string[], searchResult: number[]) {
   return powerBases;
 }
 
+// factorial replacement interface
+interface FactReplace{
+  toReplace: string;
+  replacement: string
+}
 // getting factorial numbers
 function getFactorialNumber(formulas: string[], searchResult: number[]) {
-  let numbers: { toReplace: string; replacement: string }[] = [];
+  let numbers: FactReplace[] = [];
   let factorialSequence = 0;
 
   searchResult.forEach((factorialIndex: number) => {

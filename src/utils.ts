@@ -1,26 +1,28 @@
 // targeting buttons
-let numbers: NodeListOf<HTMLButtonElement> =
-  document.querySelectorAll(".number");
-let operators: NodeListOf<HTMLButtonElement> =
-  document.querySelectorAll(".operator");
+let output: HTMLInputElement = document.querySelector(".output")!;
+let memDisplay: HTMLSpanElement = document.querySelector(".mem-value")!;
+let isDegree: HTMLButtonElement = document.querySelector(".deg")!;
+let feBtn: HTMLButtonElement = document.querySelector(".f-e")!;
+let memoryBtns: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll(".mem");
 let trigoFuncs: NodeListOf<HTMLButtonElement> =
   document.querySelectorAll(".trigo-function");
 let mathFuncs: NodeListOf<HTMLButtonElement> =
   document.querySelectorAll(".math-function");
-let keys: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".key");
-let output: HTMLInputElement = document.querySelector(".output")!;
-let dataValue: string[] = [];
-let dataFormula: string[] = [];
 let advFuncToggler: HTMLButtonElement =
   document.querySelector(".adv-func-toggler")!;
-let isDegree: HTMLButtonElement = document.querySelector(".deg")!;
+let operators: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll(".operator");
+let numbers: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll(".number");
+let keys: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".key");
 let clearAllBtn: HTMLButtonElement = document.querySelector(".clear")!;
 let backSpaceBtn: HTMLButtonElement = document.querySelector(".backspace")!;
+let dataValue: string[] = [];
+let dataFormula: string[] = [];
 let decimalBtn: HTMLButtonElement = document.querySelector(".decimal")!;
 let calculateBtn: HTMLButtonElement = document.querySelector(".calculate")!;
-let memDisplay:HTMLSpanElement = document.querySelector(".mem-value")!;
-let memoryBtns:NodeListOf<HTMLButtonElement> = document.querySelectorAll(".mem");
-let feBtn:HTMLButtonElement = document.querySelector(".f-e")!;
+
 // some constants
 const OPERATORS = ["*", "-", "/", "+", "%"];
 const POWER = "POWER(";
@@ -32,14 +34,14 @@ const MATHLOG = "Math.log(";
 const MATHSQRT = "Math.sqrt(";
 const MATHCBRT = "Math.cbrt(";
 const OPENPARANTHESE = "(";
-const CLOSEPARANTHESE =")"
+const CLOSEPARANTHESE = ")";
 
 // utility functions
 // clear function
 function clearAll() {
   clearAllBtn.addEventListener("click", () => {
     output.value = "";
-     emptyInput()
+    emptyInput();
     disableDecimal();
   });
 }
@@ -91,8 +93,8 @@ function getValue(): string[] {
 }
 
 // search function to get indexes for given keyword
-function search(array:string[], keyword:string) {
-  let resultArray:number[] = [];
+function search(array: string[], keyword: string) {
+  let resultArray: number[] = [];
   // this searches  keyword in array and puts it's index in result_array
   array.forEach((element, index) => {
     if (element == keyword) {
@@ -103,12 +105,11 @@ function search(array:string[], keyword:string) {
   return resultArray;
 }
 
-function emptyInput(){
-  dataFormula = []
-  dataValue = []
+// clears the input from input strings
+function emptyInput(): void {
+  dataFormula = [];
+  dataValue = [];
 }
-
-
 
 export {
   numbers,
@@ -142,5 +143,5 @@ export {
   OPERATORS,
   memDisplay,
   memoryBtns,
-  feBtn
+  feBtn,
 };
