@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="calculator container">
-        <div class="display w-100 d-flex"><input type="text" placeholder="0" class="h1 text-end overflow-auto pt-3 output" value=""></div>
+        <div class="display w-100 d-flex"><input type="text" placeholder="0" class="h1 text-end overflow-auto pt-3 output" value="" readonly></div>
         <p>Memory: <span class="mem-value">0</span></p>
         <!-- Input keys -->
         <div class="keys w-100">
@@ -57,7 +57,7 @@
                 <button class="col"></button>
              </div>
              <div class="row row4 m-1">
-                <button class="col btn adv-func-toggler" onclick="advFuncToggler()">2<sup>nd</sup></button>
+                <button class="col btn adv-func-toggler">2<sup>nd</sup></button>
                 <button class="col btn key" value="&#928" data-formula="Math.PI"> &#928 </button>
                 <button class="col btn key" value="e" data-formula="Math.E">e</button>
                 <button class="col btn clear">C</button>
@@ -69,7 +69,7 @@
                 <button class="col btn math-function" value="^" data-formula="onebyx"><sup>1</sup>/<em>x</em></button>
                 <button class="col btn math-function" value="abs" data-formula="Math.abs">|<em>x</em>|</button>
                 <button class="col btn math-function" value="e^" data-formula="Math.exp">exp</button>
-                <button class="col btn math-function" value="%" data-formula="/100">mod</button>
+                <button class="col btn operator" value="%" data-formula="%">mod</button>
              </div>
              <div class="row row6 m-1">
                 <button class="col btn math-function visible border border-0" value="&#8730" data-formula="Math.sqrt">&#8730x</button>
@@ -113,6 +113,6 @@
              </div>
         </div>
     </div>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js" type="module"></script>
 </body>
 </html>
